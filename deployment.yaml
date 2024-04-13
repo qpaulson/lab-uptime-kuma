@@ -64,8 +64,7 @@ spec:
         backend:
           service:
             name: uptime-kuma
-            port:
-              name: 3001
+            port: 3001
     host: uptime.lab
   tls:
   - hosts:
