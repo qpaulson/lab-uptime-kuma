@@ -38,7 +38,8 @@ spec:
   selector:
     app.kubernetes.io/name: uptime-kuma
   ports:
-    - protocol: TCP
+    - name: http
+      protocol: TCP
       port: 80
       targetPort: 3001
 
@@ -65,7 +66,7 @@ spec:
           service:
             name: uptime-kuma
             port:
-              name: tcp
+              name: http
     host: uptime.lab
   tls:
   - hosts:
