@@ -32,7 +32,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: uptime-kuma
+  labels:
+    app.kubernetes.io/component: server
+    app.kubernetes.io/name: uptime-kuma
+    app.kubernetes.io/part-of: uptime-kuma
   name: uptime-kuma
 spec:
   selector:
@@ -58,8 +61,7 @@ metadata:
 spec:
   ingressClassName: uptime-kuma
   rules:
-  - host: uptime.lab
-    http:
+  - http:
       paths:
       - path: /
         pathType: Prefix
@@ -74,8 +76,4 @@ spec:
     - uptime.lab
     secretName: uptime-kuma-ingress-http
 
-  status:
-    loadBalancer:
-      ingress:
-      - ip: 192.168.1.136
 
