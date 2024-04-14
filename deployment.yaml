@@ -58,7 +58,8 @@ metadata:
 spec:
   ingressClassName: uptime-kuma
   rules:
-  - http:
+  - host: uptime.lab
+    http:
       paths:
       - path: /
         pathType: Prefix
