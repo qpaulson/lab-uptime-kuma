@@ -32,11 +32,9 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    app.kubernetes.io/component: server
-    app.kubernetes.io/name: uptime-kuma
-    app.kubernetes.io/part-of: uptime-kuma
   name: uptime-kuma
+  labels:
+    app: uptime-kuma
 spec:
   selector:
     app: uptime-kuma
