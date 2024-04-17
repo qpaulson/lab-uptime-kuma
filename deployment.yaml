@@ -13,7 +13,7 @@ spec:
   template:
     metadata:
       labels:
-	app.kubernetes.io/name: uptime-kuma
+	app: uptime-kuma
     spec:
       containers:
       - name: uptime-kuma
@@ -39,7 +39,7 @@ metadata:
   name: uptime-kuma
 spec:
   selector:
-    app.kubernetes.io/name: uptime-kuma
+    app: uptime-kuma
   ports:
     - name: http
       port: 80
