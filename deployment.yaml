@@ -13,7 +13,7 @@ spec:
   template:
     metadata:
       labels:
-	app: uptime-kuma
+        app: uptime-kuma
     spec:
       containers:
       - name: uptime-kuma
@@ -32,12 +32,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: uptime-kuma
   labels:
-    app: uptime-kuma
+    app.kubernetes.io/component: server
+    app.kubernetes.io/name: uptime-kuma
+    app.kubernetes.io/part-of: uptime-kuma
+  name: uptime-kuma
 spec:
   selector:
-    app: uptime-kuma
+    app.kubernetes.io/name: uptime-kuma
   ports:
     - name: http
       port: 80
@@ -73,5 +75,3 @@ spec:
   - hosts:
     - uptime.lab
     secretName: uptime-kuma-ingress-http
-
-
