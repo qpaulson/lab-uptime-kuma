@@ -40,6 +40,7 @@ apiVersion: v1
 metadata:
   name: uptime-kuma-pvc
   namespace: uptime-kuma
+  storageclass.kubernetes.io/is-default-class: "true"
 spec:
   accessModes:
   - ReadWriteOnce
